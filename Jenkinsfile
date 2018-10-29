@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
+                sh 'touch $ENV'
                 sh 'bash gradlew assembleRelease'
                 sh 'ls -lh /usr/local/android-sdk/build-tools'
             }
