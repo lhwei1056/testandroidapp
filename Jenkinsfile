@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'orestx/cv-android'
+            image 'orestx/cv-android:27-28.0.3'
             label 'docker'
         }
     }
