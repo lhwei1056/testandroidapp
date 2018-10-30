@@ -1,12 +1,13 @@
 pipeline {
-        parameters {
-            string (name: 'ANDROID_VERSION', defaultValue: '27')
-            string (name: 'ANDROID_BUILD_TOOLS_VERSION', defaultValue: '27.0.2')
-        }
+    parameters {
+        string (name: 'ANDROID_VERSION', defaultValue: '27')
+        string (name: 'ANDROID_BUILD_TOOLS_VERSION', defaultValue: '27.0.2')
+    }
     agent {
         docker {
             image 'orestx/cv-android:27-28.0.3'
             label 'docker'
+            args '-v android-sdk_plus_gradle-libraries:/usr/local/android-sdk'
         }
     }
     stages {
